@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    background: var(--paper-deep);
+    color: var(--ink);
+    font-family: var(--font-ui);
+    line-height: 1.6
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0
+}
+
+p {
+    margin: 0
+}
+
+a,
+button {
+    font: inherit;
+    color: inherit
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm)
+}
+
+.skip {
+    position: absolute;
+    left: 8px;
+    top: -60px;
+    background: var(--ink);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    z-index: 50
+}
+
+.skip:focus {
+    top: 8px
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: .7rem 1.4rem;
+    background: var(--ink);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none
+}
+
+.btn:hover {
+    background: var(--brand)
+}

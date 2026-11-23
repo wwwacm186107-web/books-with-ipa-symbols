@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHAN – read stories, hear every sound</title>
+<meta name="description" content="Read short stories with IPA above every word and British English pronunciation.">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/reader.css">
+<link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+<a class="skip" href="#library">Skip to the stories</a>
+<div id="landing">
+  <header class="topbar"><div class="topbar-in">
+    <a class="logo" href="#">CHAN</a>
+    <a class="btn" href="#library">Explore shelves
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></a>
+  </div></header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title">Read a story. <em>Hear every sound.</em></h1>
+    <p>Short stories with the phonetic spelling above each word, colour-coded by sound type. Click any word to hear it in a British accent.</p>
+  </section>
+
+  <main id="library" class="shell" aria-label="Story library">
+    <div class="inner">
+      <aside class="side"><nav aria-label="Library">
+        <button class="pill" data-nav="all" type="button" aria-pressed="true">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h10"/></svg>
+          <span>My Library</span><span class="n" id="count-all">0</span></button>
+        <button class="pill" data-nav="reading" type="button" aria-pressed="false">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.25v13m0-13C10.8 5.5 9.2 5 7.5 5S4.2 5.5 3 6.25v13C4.2 18.5 5.8 18 7.5 18s3.3.5 4.5 1.25m0-13C13.2 5.5 14.8 5 16.5 5c1.7 0 3.3.5 4.5 1.25v13C19.8 18.5 18.2 18 16.5 18c-1.7 0-3.3.5-4.5 1.25"/></svg>
+          <span>Current Reading</span><span class="n" id="count-reading">0</span></button>
+      </nav></aside>
+
+      <div class="canvas">
+        <div class="toolbar">
+          <div class="seg" role="group" aria-label="View">
+            <button type="button" data-view="shelves" aria-pressed="true">Shelves</button>
+            <button type="button" data-view="grid" aria-pressed="false">All Books</button>
+          </div>
+          <input class="search" id="search" type="search" placeholder="Search by title or author" aria-label="Search stories">
+          <button class="az-btn" id="az-btn" type="button" aria-expanded="false" aria-controls="az-bar">Sort A–Z</button>
+        </div>
+        <div class="az-bar" id="az-bar" hidden role="group" aria-label="Show titles starting with"></div>
+        <p id="msg" role="status" style="color:var(--ink-soft);margin:0 0 16px"></p>
+        <div id="shelves"></div>
+        <p class="empty" id="empty" hidden></p>
+      </div>
+    </div>
+  </main>
+
+  <section class="sounds" id="sounds" aria-labelledby="sounds-title">
+    <h2 id="sounds-title">Five kinds of sound</h2>
+    <p class="sub">Every symbol in the reader uses one of these colours.</p>
+    <ul class="legend" id="legend"></ul>
+  </section>
+  <footer>&copy; 2026 <strong>Storybook</strong>. Written by <strong>Chan</strong>.</footer>
+</div>
+
+<section class="reader" id="reader" hidden aria-label="Story reader">
+  <header class="r-bar">
+    <button class="btn ghost" id="r-back" type="button">Back to shelf</button>
+    <h2 id="r-title"></h2>
+    <div class="r-tools">
+      <button class="btn ghost" id="r-stop" type="button">Stop audio</button>
+      <details class="r-legend"><summary>Sound colours</summary><ul id="r-legend"></ul></details>
+    </div>
+  </header>
+  <div class="r-tabs" role="tablist" aria-label="Page view">
+    <button id="tab-text" role="tab" aria-selected="true" type="button">Story</button>
+    <button id="tab-sounds" role="tab" aria-selected="false" type="button">Sounds</button>
+  </div>
+  <div class="book-spread" id="spread">
+    <article class="page left" id="pg-left" aria-label="Story text"></article>
+    <article class="page right" id="pg-right" aria-label="Pronunciation with IPA"></article>
+  </div>
+  <nav class="r-nav" aria-label="Pages">
+    <button class="btn ghost" id="r-prev" type="button">Previous</button>
+    <span id="r-ind" aria-live="polite"></span>
+    <button class="btn" id="r-next" type="button">Next page</button>
+  </nav>
+  <p id="r-msg" role="status"></p>
+</section>
+
+<script src="js/dom.js"></script>
+<script src="js/phonetics.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/pronunciation.js"></script>
+<script src="js/reader.js"></script>
+<script src="js/stories.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

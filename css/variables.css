@@ -1,0 +1,28 @@
+/* Design tokens. Every colour in the app comes from here. */
+:root {
+  --paper: #FBF7F2;
+  --paper-deep: #F5EFE6;
+  --panel: #FFFFFF;
+  --line: #E6DAC8;
+  --ink: #2B2623;
+  --ink-strong: #1E2421;
+  --ink-soft: #5C534C;
+  --ink-faint: #8E837A;
+  --brand: #8C6239;
+  --accent: #C87D55;
+
+  /* Five phonetic categories (each >= 4.5:1 on white) */
+  --short-vowel: #b8322f;
+  --long-vowel: #1d6a8c;
+  --diphthong: #7a479e;
+  --voiced: #2b7a4b;
+  --voiceless: #9a5a00;
+
+  --font-display: "Playfair Display", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-ui: "Inter", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-ipa: "Charis SIL", "Gentium Plus", "Segoe UI", "Noto Sans", "DejaVu Sans", sans-serif;
+
+  --radius-lg: 28px;
+  --radius-md: 14px;
+  --radius-sm: 6px;
+}
